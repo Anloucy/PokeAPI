@@ -18,9 +18,16 @@ function createPokemonCard(pokemon){
     card.append(img, name)
     document.querySelector('#pokemons').append(card)
     
-    card.addEventListener("click", function (ev){
-        ev.target
-    })
+    card.addEventListener("click", function (){
+        const dialog = document.querySelector(".dialog"); 
+        dialog.showModal();
+    });
+    
+    const closeButton = document.getElementById('close-dialog'); 
+    closeButton.addEventListener('click', function() {
+        const dialog = document.querySelector(".dialog");
+        dialog.close(); 
+    });
 }
 
 const list = []
@@ -60,10 +67,6 @@ input.addEventListener('input', function (){
         input.textContent = "";
     });
 });
-
-
-
-
 
 document.getElementById("themeSwitcher").addEventListener('click', function() {
     if(main.dataset.theme === "dark"){

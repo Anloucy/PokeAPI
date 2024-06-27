@@ -1,6 +1,7 @@
 const main = document.querySelector("main")
 const root = document.querySelector(":root")
 const input = document.querySelector('input')
+const pokeInfo = document.getElementById("pokemon-info"); 
 
 function createPokemonCard(pokemon){
     const card = document.createElement('div')
@@ -19,14 +20,7 @@ function createPokemonCard(pokemon){
     document.querySelector('#pokemons').append(card)
     
     card.addEventListener("click", function (){
-        const dialog = document.querySelector(".dialog"); 
-        dialog.showModal();
-    });
-    
-    const closeButton = document.getElementById('close-dialog'); 
-    closeButton.addEventListener('click', function() {
-        const dialog = document.querySelector(".dialog");
-        dialog.close(); 
+        pokeInfo.style.display = 'block'
     });
 }
 
@@ -82,4 +76,8 @@ document.getElementById("themeSwitcher").addEventListener('click', function() {
 
         main.dataset.theme ="dark"
     }
+})
+
+document.getElementById("btn-pokemonInfo").addEventListener('click', function(){
+    pokeInfo.style.display="none"
 })

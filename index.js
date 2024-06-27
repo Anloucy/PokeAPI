@@ -21,7 +21,8 @@ function createPokemonCard(pokemon){
     
     card.addEventListener("click", function (){
         pokeInfo.style.display = 'block'
-        pokeInfo.dataset.id = pokemon.id
+        pokeInfo.dataset.id = pokeName
+        findPokemon(pokeName)
     });
 }
 
@@ -30,17 +31,21 @@ const list = []
 async function GetPokemon(){
     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
     const data = await response.json();
-    
+
     data.results.forEach(async (pokemon) => {
         const pokemonResponse = await fetch(pokemon.url)
         const pokemonData = await pokemonResponse.json()
-        list.push(pokemon)
+        list.push(pokemonData)
         createPokemonCard(pokemonData)
     })
 }
 
 GetPokemon()
 
+function findPokemon(pokeName){
+    let pokemon = list.find((poke) => poke.name === pokeName)
+    console.log(pokemon)
+}
 
 input.addEventListener('input', function (){
     let userInput = input.value.toLowerCase()

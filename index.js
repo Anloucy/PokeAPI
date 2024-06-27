@@ -21,6 +21,7 @@ function createPokemonCard(pokemon){
     
     card.addEventListener("click", function (){
         pokeInfo.style.display = 'block'
+        pokeInfo.dataset.id = pokemon.id
     });
 }
 
@@ -80,4 +81,5 @@ document.getElementById("themeSwitcher").addEventListener('click', function() {
 
 document.getElementById("btn-pokemonInfo").addEventListener('click', function(){
     pokeInfo.style.display="none"
+    pokeInfo.dataset.id = ""
 })

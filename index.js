@@ -85,16 +85,14 @@ input.addEventListener('input', function (){
 
 document.getElementById("themeSwitcher").addEventListener('click', function() {
     if(main.dataset.theme === "dark"){
-        root.style.setProperty("--dk-color", "#454546")
-        root.style.setProperty("--bk-color", "#000000")
-        root.style.setProperty("--fk-color", "#ffffff")
+        root.style.setProperty("--bg-color","#F5F5F5")
+        root.style.setProperty("--pc-color", "#fffffff")
+        root.style.setProperty("--text-color", "#000000")
         main.dataset.theme="light"
     }else{
-        
-        root.style.setProperty("--dk-color","#d3d3d3")
-        root.style.setProperty("--bk-color", "#fffffff")
-        root.style.setProperty("--fk-color", "#000000")
-
+        root.style.setProperty("--bg-color", "#242424")
+        root.style.setProperty("--pc-color", "#151515")
+        root.style.setProperty("--text-color", "#ffffff")
         main.dataset.theme ="dark"
     }
 })

@@ -5,9 +5,9 @@
 }
 
 :root{
-    --dk-color: #d3d3d3;
-    --bk-color: #ffffff;
-    --fk-color: #000000;
+    --bg-color: #F5F5F5;
+    --pc-color: #ffffff;
+    --text-color: #000000;
 }
 
 *{
@@ -18,27 +18,30 @@
 }
 
 body{
-    background-color: var(--bk-color);
+    background-color: var(--bg-color);
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #pokemons{
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px ;
     justify-items: center;
     align-items: center; 
-
-    padding: 30px 250px 15px 250px;
-  
 }
 
 .poke{
     padding: 2.5rem;
-    width: 85%;
-    background-color: var(--dk-color) ;
+    width: 95%;
+    background-color: var(--pc-color) ;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 8px;
+    Box-shadow: 6px 0 6px #00000040
 }
 
 .poke:hover{
@@ -55,7 +58,7 @@ body{
 
 .pokeName{
     text-transform: capitalize;
-    color: var(--fk-color);
+    color: var(--text-color);
     font-size:small;
     padding-top: 6px;
 }

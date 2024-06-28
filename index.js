@@ -23,6 +23,7 @@ function createPokemonCard(pokemon){
         pokeInfo.style.display = 'block'
         pokeInfo.dataset.id = pokeName
         findPokemon(pokeName)
+        showingPokemon(pokemon)
     });
 }
 
@@ -45,6 +46,20 @@ GetPokemon()
 function findPokemon(pokeName){
     let pokemon = list.find((poke) => poke.name === pokeName)
     console.log(pokemon)
+}
+
+function showingPokemon(pokemon){
+    let pokeName = document.getElementById("pokemon-info-name");
+    pokeName.textContent = (pokemon.name).charAt(0).toUpperCase() + pokemon.name.slice(1) + ":";
+
+    let pokeSprite = document.getElementById("pokemon-info-photo");
+    pokeSprite.src = pokemon.sprites.front_default;
+    pokeSprite.setAttribute.alt = "foto do pokemon";
+
+    let pokeType1 = document.getElementById("pokemon-info-types 1")
+    pokeType1.textContent = pokemon.types[0].type.name;
+    let pokeType2 = document.getElementById("pokemon-info-types 2")
+    pokeType2.textContent = pokemon.types[1]?.type.name;
 }
 
 input.addEventListener('input', function (){

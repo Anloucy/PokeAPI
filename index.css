@@ -136,3 +136,21 @@ nav div{
     display: flex;
     justify-content: space-between;
 }
+
+#pokemon-info-photo{
+    width: 150px;
+    height: 150px;
+    margin: 36px;
+}
+
+.pokemon-info-types{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+#pokemon-info-types{
+    border: 1px solid black;
+    padding: 5px;
+}

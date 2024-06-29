@@ -35,6 +35,8 @@ function createPokemonCard(pokemon){
     
     card.addEventListener("click", function (){
         showingPokemon(findPokemon(pokeName))
+        
+        console.log(findPokemon(pokeName))
     });
 }
 
@@ -42,6 +44,7 @@ function findPokemon(pokeName){
     let pokemon = list.find((poke) => poke.name === pokeName)
     return pokemon
 }
+
 
 function showingPokemon(pokemon){
     pokeInfo.style.display = 'block'
@@ -51,12 +54,24 @@ function showingPokemon(pokemon){
 
     let pokeSprite = document.getElementById("pokemon-info-photo");
     pokeSprite.src = pokemon.sprites.front_default;
-    pokeSprite.setAttribute.alt = "foto do pokemon";
+    pokeSprite.setAttribute.alt = "pokemon's sprite";
 
-    let pokeType1 = document.getElementById("pokemon-info-types 1")
+    let pokeId = document.getElementById("pokemon-id")
+    pokeId.textContent = `ID: #${pokemon.id}`;
+    let pokeHeight = document.getElementById("pokemon-height")
+    pokeHeight.textContent = `Height: ${pokemon.height}`;
+    let pokeWeight = document.getElementById("pokemon-weight")
+    pokeWeight.textContent = `Weight: ${pokemon.weight}`;
+
+    let pokeType1 = document.getElementById("pit 1")
     pokeType1.textContent = pokemon.types[0].type.name;
-    let pokeType2 = document.getElementById("pokemon-info-types 2")
+    let pokeType2 = document.getElementById("pit 2")
     pokeType2.textContent = pokemon.types[1]?.type.name;
+
+    let pokeAblt1 = document.getElementById("pia 1")
+    pokeAblt1.textContent = pokemon.abilities[0].ability.name;
+    let pokeAblt2 = document.getElementById("pia 2")
+    pokeAblt2.textContent = pokemon.abilities[1]?.ability.name;
 }
 
 document.getElementById("btn-pokemonInfo").addEventListener('click', function(){
@@ -93,16 +108,16 @@ input.addEventListener('input', function (){
 });
 
 document.getElementById("themeSwitcher").addEventListener('click', function() {
-    if(main.dataset.theme === "dark"){
-        root.style.setProperty("--bg-color","#F5F5F5")
-        root.style.setProperty("--pc-color", "#fffffff")
-        root.style.setProperty("--text-color", "#000000")
-        main.dataset.theme="light"
-    }else{
+    if(main.dataset.theme === "light"){
         root.style.setProperty("--bg-color", "#242424")
         root.style.setProperty("--pc-color", "#151515")
         root.style.setProperty("--text-color", "#ffffff")
         main.dataset.theme ="dark"
+    }else{
+        root.style.setProperty("--bg-color","#F5F5F5")
+        root.style.setProperty("--pc-color", "#fffffff")
+        root.style.setProperty("--text-color", "#000000")
+        main.dataset.theme="light"
     }
 })
 

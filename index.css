@@ -5,9 +5,9 @@
 }
 
 :root{
-    --bg-color: #F5F5F5;
-    --pc-color: #ffffff;
-    --text-color: #000000;
+    --bg-color: #242424;
+    --pc-color: #151515;
+    --text-color: #ffffff;
 }
 
 *{
@@ -144,6 +144,7 @@ a{
     width: 800px;
 }
 
+
 .pokemon-info-header{
     display: flex;
     justify-content: space-between;
@@ -155,7 +156,13 @@ a{
     margin: 36px;
 }
 
-.pokemon-info-types{
+.poke-atributes{
+    gap:30px;
+    display:flex;
+    flex-direction: column;
+}
+
+.pokemon-info-types, .pokemon-info-abilities{
     list-style: none;
     display: flex;
     gap: 30px;

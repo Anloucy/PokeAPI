@@ -101,9 +101,15 @@ input.addEventListener('input', function (){
             sugestions.innerHTML = ""
             input.value =""
         })
-
         listItem.append(btnItem)
         sugestions.appendChild(listItem);
+    });
+    
+    document.addEventListener('click', function(event) {
+        if (!input.contains(event.target) && !sugestions.contains(event.target)) {
+            sugestions.innerHTML = "";
+            input.value = ""
+        }
     });
 });
 
